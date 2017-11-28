@@ -496,16 +496,12 @@ public class ConductorPayApi {
    * @param page P\u00C3\u00A1gina solicitada (Default = 0)
    * @param limit Limite de elementos por solicita\u00C3\u00A7\u00C3\u00A3o (Default = 50, Max = 50)
    * @param status Status do cart\u00C3\u00A3o tokenizado
+   * @param numeroCartao Numero do cart\u00C3\u00A3o tokenizado
    * @return PageCartaoPayResponse
    */
-  public PageCartaoPayResponse listarUsingGET6(String deviceId, List<String> sort, Integer page, Integer limit, String status) throws ApiException {
+  public PageCartaoPayResponse listarUsingGET6(String deviceId, List<String> sort, Integer page, Integer limit, String status, String numeroCartao) throws ApiException {
     Object postBody = null;
     
-     // verify the required parameter 'deviceId' is set
-     if (deviceId == null) {
-        throw new ApiException(400, "Missing the required parameter 'deviceId' when calling listarUsingGET6");
-     }
-     
     // create path and map variables
     String path = "/api/cartoes-tokenizados".replaceAll("\\{format\\}","json");
 
@@ -522,6 +518,8 @@ public class ConductorPayApi {
     queryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
     
     queryParams.addAll(apiClient.parameterToPairs("", "status", status));
+    
+    queryParams.addAll(apiClient.parameterToPairs("", "numeroCartao", numeroCartao));
     
 
     if (deviceId != null)
@@ -556,17 +554,17 @@ public class ConductorPayApi {
    * @param persist persist
    * @return CartaoPayCadastroResponse
    */
-  public CartaoPayCadastroResponse salvarUsingPOST4(String deviceId, CartaoPayPersist persist) throws ApiException {
+  public CartaoPayCadastroResponse salvarUsingPOST5(String deviceId, CartaoPayPersist persist) throws ApiException {
     Object postBody = persist;
     
      // verify the required parameter 'deviceId' is set
      if (deviceId == null) {
-        throw new ApiException(400, "Missing the required parameter 'deviceId' when calling salvarUsingPOST4");
+        throw new ApiException(400, "Missing the required parameter 'deviceId' when calling salvarUsingPOST5");
      }
      
      // verify the required parameter 'persist' is set
      if (persist == null) {
-        throw new ApiException(400, "Missing the required parameter 'persist' when calling salvarUsingPOST4");
+        throw new ApiException(400, "Missing the required parameter 'persist' when calling salvarUsingPOST5");
      }
      
     // create path and map variables

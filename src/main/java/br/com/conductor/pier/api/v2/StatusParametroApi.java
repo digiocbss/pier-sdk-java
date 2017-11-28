@@ -148,12 +148,12 @@ public class StatusParametroApi {
    * @param id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id).
    * @return StatusContaResponse
    */
-  public StatusContaResponse consultarUsingGET18(Long id) throws ApiException {
+  public StatusContaResponse consultarUsingGET23(Long id) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
      if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET18");
+        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET23");
      }
      
     // create path and map variables
@@ -196,12 +196,12 @@ public class StatusParametroApi {
    * @param id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
    * @return StatusImpressaoResponse
    */
-  public StatusImpressaoResponse consultarUsingGET19(Long id) throws ApiException {
+  public StatusImpressaoResponse consultarUsingGET24(Long id) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
      if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET19");
+        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET24");
      }
      
     // create path and map variables
@@ -363,6 +363,47 @@ public class StatusParametroApi {
   }
   
   /**
+   * Lista os tipos de transa\u00C3\u00A7\u00C3\u00B5es
+   * Esse recurso permite listar os tipos de transa\u00C3\u00A7\u00C3\u00B5es dispon\u00C3\u00ADveis.
+   * @return List<Object>
+   */
+  public List<Object> listarTiposEventosTransacoesUsingGET() throws ApiException {
+    Object postBody = null;
+    
+    // create path and map variables
+    String path = "/api/tipos-eventos-transacoes".replaceAll("\\{format\\}","json");
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    //String[] authNames = new String[] {"client_id",  };
+    String[] authNames = new String[] {"client_id", "access_token"};
+
+    
+    GenericType<List<Object>> returnType = new GenericType<List<Object>>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
    * Lista os Status Contas cadastrados para o Emissor
    * Este m\u00C3\u00A9todo permite que sejam listados os Status Contas existentes na base de dados do Emissor.
    * @param sort Tipo de ordena\u00C3\u00A7\u00C3\u00A3o dos registros.
@@ -381,7 +422,7 @@ public class StatusParametroApi {
    * @param permiteAtribuirComoCancelamento Par\u00C3\u00A2metro que define se o Status da conta permite ser atribu\u00C3\u00ADdo para realizar o cancelamento definitivo de uma conta, sendo: 0: Inativo e 1: Ativo.
    * @return PageStatusContaResponse
    */
-  public PageStatusContaResponse listarUsingGET25(List<String> sort, Integer page, Integer limit, Long id, String nome, Integer permiteAlterarVencimento, Integer permiteAlterarLimite, Integer permiteEmitirNovaViaCartao, Integer permiteFazerTransferencia, Integer permiteReceberTransferencia, Integer permiteCriarAcordoCobranca, Integer permiteAtribuirComoBloqueio, Integer permiteDesbloquear, Integer permiteAtribuirComoCancelamento) throws ApiException {
+  public PageStatusContaResponse listarUsingGET30(List<String> sort, Integer page, Integer limit, Long id, String nome, Integer permiteAlterarVencimento, Integer permiteAlterarLimite, Integer permiteEmitirNovaViaCartao, Integer permiteFazerTransferencia, Integer permiteReceberTransferencia, Integer permiteCriarAcordoCobranca, Integer permiteAtribuirComoBloqueio, Integer permiteDesbloquear, Integer permiteAtribuirComoCancelamento) throws ApiException {
     Object postBody = null;
     
     // create path and map variables
@@ -455,7 +496,7 @@ public class StatusParametroApi {
    * @param nome Nome do status impress\u00C3\u00A3o
    * @return PageStatusImpressaoResponse
    */
-  public PageStatusImpressaoResponse listarUsingGET26(List<String> sort, Integer page, Integer limit, Long id, String nome) throws ApiException {
+  public PageStatusImpressaoResponse listarUsingGET31(List<String> sort, Integer page, Integer limit, Long id, String nome) throws ApiException {
     Object postBody = null;
     
     // create path and map variables

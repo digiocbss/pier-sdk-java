@@ -13,10 +13,10 @@ import java.util.List;
 
 
 /**
- * Lista de faturas
+ * Representa\u00C3\u00A7\u00C3\u00A3o da resposta do recurso de planos de parcelamento
  **/
 
-@ApiModel(description = "Lista de faturas")
+@ApiModel(description = "Representa\u00C3\u00A7\u00C3\u00A3o da resposta do recurso de planos de parcelamento")
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
 public class PageFaturaResponse   {
   
