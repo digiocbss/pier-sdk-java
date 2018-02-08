@@ -14,16 +14,12 @@ import br.com.conductor.pier.api.v2.model.PageCompraResponse;
 import br.com.conductor.pier.api.v2.model.AntecipacaoSimuladaResponse;
 import br.com.conductor.pier.api.v2.model.AntecipacaoSimuladaLoteResponse;
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class AntecipacaoApi {
   private ApiClient apiClient;
 
@@ -286,12 +282,12 @@ public class AntecipacaoApi {
    * @param tipoOrigemTransacao Indica se a compra \u00C3\u00A9 ON-US ou OFF-US
    * @return PageCompraResponse
    */
-  public PageCompraResponse listarUsingGET8(Long idConta, List<String> sort, Integer page, Integer limit, Long idCompra, Boolean parcelada, Boolean juros, String tipoOrigemTransacao) throws ApiException {
+  public PageCompraResponse listarUsingGET11(Long idConta, List<String> sort, Integer page, Integer limit, Long idCompra, Boolean parcelada, Boolean juros, String tipoOrigemTransacao) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
      if (idConta == null) {
-        throw new ApiException(400, "Missing the required parameter 'idConta' when calling listarUsingGET8");
+        throw new ApiException(400, "Missing the required parameter 'idConta' when calling listarUsingGET11");
      }
      
     // create path and map variables
@@ -455,4 +451,3 @@ public class AntecipacaoApi {
   }
   
 }
-

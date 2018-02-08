@@ -10,8 +10,6 @@ import java.util.List;
 
 
 
-
-
 /**
  * Objeto Response do arquivo.
  **/
@@ -23,7 +21,6 @@ public class ArquivoResponse   {
   private Long id = null;
   private Long idTipoArquivo = null;
   private String nomeTipoArquivo = null;
-  private String arquivo = null;
   private Long idStatusArquivo = null;
   private String nomeStatusArquivo = null;
   private String nome = null;
@@ -52,14 +49,14 @@ public class ArquivoResponse   {
 
   
   /**
-   * Tipo do arquivo
+   * C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do arquivo
    **/
   public ArquivoResponse idTipoArquivo(Long idTipoArquivo) {
     this.idTipoArquivo = idTipoArquivo;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Tipo do arquivo")
+  @ApiModelProperty(example = "null", value = "C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Tipo do arquivo")
   @JsonProperty("idTipoArquivo")
   public Long getIdTipoArquivo() {
     return idTipoArquivo;
@@ -88,32 +85,14 @@ public class ArquivoResponse   {
 
   
   /**
-   * Conte\u00C3\u00BAdo do arquivo convertido em Base 64
-   **/
-  public ArquivoResponse arquivo(String arquivo) {
-    this.arquivo = arquivo;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Conte\u00C3\u00BAdo do arquivo convertido em Base 64")
-  @JsonProperty("arquivo")
-  public String getArquivo() {
-    return arquivo;
-  }
-  public void setArquivo(String arquivo) {
-    this.arquivo = arquivo;
-  }
-
-  
-  /**
-   * C\u00C3\u00B3digo de status do arquivo
+   * C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Status do arquivo
    **/
   public ArquivoResponse idStatusArquivo(Long idStatusArquivo) {
     this.idStatusArquivo = idStatusArquivo;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "C\u00C3\u00B3digo de status do arquivo")
+  @ApiModelProperty(example = "null", value = "C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do Status do arquivo")
   @JsonProperty("idStatusArquivo")
   public Long getIdStatusArquivo() {
     return idStatusArquivo;
@@ -160,14 +139,14 @@ public class ArquivoResponse   {
 
   
   /**
-   * Formato/extens\u00C3\u00A3o do arquivo
+   * Formato/Extens\u00C3\u00A3o do arquivo
    **/
   public ArquivoResponse extensao(String extensao) {
     this.extensao = extensao;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Formato/extens\u00C3\u00A3o do arquivo")
+  @ApiModelProperty(example = "null", value = "Formato/Extens\u00C3\u00A3o do arquivo")
   @JsonProperty("extensao")
   public String getExtensao() {
     return extensao;
@@ -244,7 +223,6 @@ public class ArquivoResponse   {
     return Objects.equals(this.id, arquivoResponse.id) &&
         Objects.equals(this.idTipoArquivo, arquivoResponse.idTipoArquivo) &&
         Objects.equals(this.nomeTipoArquivo, arquivoResponse.nomeTipoArquivo) &&
-        Objects.equals(this.arquivo, arquivoResponse.arquivo) &&
         Objects.equals(this.idStatusArquivo, arquivoResponse.idStatusArquivo) &&
         Objects.equals(this.nomeStatusArquivo, arquivoResponse.nomeStatusArquivo) &&
         Objects.equals(this.nome, arquivoResponse.nome) &&
@@ -256,7 +234,7 @@ public class ArquivoResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, idTipoArquivo, nomeTipoArquivo, arquivo, idStatusArquivo, nomeStatusArquivo, nome, extensao, dataInclusao, dataAlteracao, detalhes);
+    return Objects.hash(id, idTipoArquivo, nomeTipoArquivo, idStatusArquivo, nomeStatusArquivo, nome, extensao, dataInclusao, dataAlteracao, detalhes);
   }
 
   @Override
@@ -267,7 +245,6 @@ public class ArquivoResponse   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    idTipoArquivo: ").append(toIndentedString(idTipoArquivo)).append("\n");
     sb.append("    nomeTipoArquivo: ").append(toIndentedString(nomeTipoArquivo)).append("\n");
-    sb.append("    arquivo: ").append(toIndentedString(arquivo)).append("\n");
     sb.append("    idStatusArquivo: ").append(toIndentedString(idStatusArquivo)).append("\n");
     sb.append("    nomeStatusArquivo: ").append(toIndentedString(nomeStatusArquivo)).append("\n");
     sb.append("    nome: ").append(toIndentedString(nome)).append("\n");
@@ -290,6 +267,4 @@ public class ArquivoResponse   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
-
 

@@ -17,19 +17,16 @@ import br.com.conductor.pier.api.v2.model.PortadorResponse;
 import br.com.conductor.pier.api.v2.model.CartaoDetalheResponse;
 import br.com.conductor.pier.api.v2.model.PageLoteCartoesPrePagosResponse;
 import br.com.conductor.pier.api.v2.model.PageCartaoResponse;
+import br.com.conductor.pier.api.v2.model.ValidaCVVRequest;
 import br.com.conductor.pier.api.v2.model.ValidaCartaoResponse;
 import br.com.conductor.pier.api.v2.model.ValidaSenhaCartaoResponse;
-
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class CartaoApi {
   private ApiClient apiClient;
 
@@ -648,12 +645,12 @@ public class CartaoApi {
    * @param id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
    * @return CartaoDetalheResponse
    */
-  public CartaoDetalheResponse consultarUsingGET7(Long id) throws ApiException {
+  public CartaoDetalheResponse consultarUsingGET8(Long id) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
      if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET7");
+        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET8");
      }
      
     // create path and map variables
@@ -795,9 +792,10 @@ public class CartaoApi {
    * @param idImagem C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o da Imagem (id).
    * @param idEndereco C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Endere\u00C3\u00A7o (id).
    * @param quantidadeCartoes N\u00C3\u00BAmero de cart\u00C3\u00B5es existentes no Lote.
+   * @param identificadorExterno N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o externo (utilizado pelo emissor).
    * @return LoteCartoesPrePagosResponse
    */
-  public LoteCartoesPrePagosResponse gerarLotesCartoesPrePagosUsingPOST(Long idOrigemComercial, Long idProduto, Long idTipoCartao, Long idImagem, Long idEndereco, Integer quantidadeCartoes) throws ApiException {
+  public LoteCartoesPrePagosResponse gerarLotesCartoesPrePagosUsingPOST(Long idOrigemComercial, Long idProduto, Long idTipoCartao, Long idImagem, Long idEndereco, Integer quantidadeCartoes, String identificadorExterno) throws ApiException {
     Object postBody = null;
     
     // create path and map variables
@@ -820,6 +818,8 @@ public class CartaoApi {
     queryParams.addAll(apiClient.parameterToPairs("", "idEndereco", idEndereco));
     
     queryParams.addAll(apiClient.parameterToPairs("", "quantidadeCartoes", quantidadeCartoes));
+    
+    queryParams.addAll(apiClient.parameterToPairs("", "identificadorExterno", identificadorExterno));
     
 
     
@@ -956,9 +956,10 @@ public class CartaoApi {
    * @param dataCadastro Data de Cadastro do Lote de Cart\u00C3\u00B5es N\u00C3\u00A3o Nominais.
    * @param usuarioCadastro Nome do Usu\u00C3\u00A1rio que criou o Lote.
    * @param statusProcessamento Indica o Status de Processamento do Lote.
+   * @param identificadorExterno N\u00C3\u00BAmero de identifica\u00C3\u00A7\u00C3\u00A3o externo (utilizado pelo emissor).
    * @return PageLoteCartoesPrePagosResponse
    */
-  public PageLoteCartoesPrePagosResponse listarLotesCartoesPrePagosUsingGET(List<String> sort, Integer page, Integer limit, Long idOrigemComercial, Long idProduto, Long idTipoCartao, Long idImagem, Long idEndereco, Integer quantidadeCartoes, String dataCadastro, String usuarioCadastro, Integer statusProcessamento) throws ApiException {
+  public PageLoteCartoesPrePagosResponse listarLotesCartoesPrePagosUsingGET(List<String> sort, Integer page, Integer limit, Long idOrigemComercial, Long idProduto, Long idTipoCartao, Long idImagem, Long idEndereco, Integer quantidadeCartoes, String dataCadastro, String usuarioCadastro, Integer statusProcessamento, String identificadorExterno) throws ApiException {
     Object postBody = null;
     
     // create path and map variables
@@ -993,6 +994,8 @@ public class CartaoApi {
     queryParams.addAll(apiClient.parameterToPairs("", "usuarioCadastro", usuarioCadastro));
     
     queryParams.addAll(apiClient.parameterToPairs("", "statusProcessamento", statusProcessamento));
+    
+    queryParams.addAll(apiClient.parameterToPairs("", "identificadorExterno", identificadorExterno));
     
 
     
@@ -1044,7 +1047,7 @@ public class CartaoApi {
    * @param sequencialCartao N\u00C3\u00BAmero sequencial do cart\u00C3\u00A3o
    * @return PageCartaoResponse
    */
-  public PageCartaoResponse listarUsingGET7(List<String> sort, Integer page, Integer limit, Long idStatusCartao, Long idEstagioCartao, Long idConta, Long idPessoa, Long idProduto, String tipoPortador, String numeroCartao, String nomeImpresso, String dataGeracao, String dataStatusCartao, String dataEstagioCartao, String dataValidade, String dataImpressao, String arquivoImpressao, Integer flagImpressaoOrigemComercial, Integer flagProvisorio, String codigoDesbloqueio, Integer sequencialCartao) throws ApiException {
+  public PageCartaoResponse listarUsingGET10(List<String> sort, Integer page, Integer limit, Long idStatusCartao, Long idEstagioCartao, Long idConta, Long idPessoa, Long idProduto, String tipoPortador, String numeroCartao, String nomeImpresso, String dataGeracao, String dataStatusCartao, String dataEstagioCartao, String dataValidade, String dataImpressao, String arquivoImpressao, Integer flagImpressaoOrigemComercial, Integer flagProvisorio, String codigoDesbloqueio, Integer sequencialCartao) throws ApiException {
     Object postBody = null;
     
     // create path and map variables
@@ -1166,6 +1169,60 @@ public class CartaoApi {
 
     
     GenericType<CartaoResponse> returnType = new GenericType<CartaoResponse>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+  /**
+   * Validar CVV do cart\u00C3\u00A3o
+   * Esse recurso permite a valida\u00C3\u00A7\u00C3\u00A3o do cvv de um cart\u00C3\u00A3o
+   * @param id C\u00C3\u00B3digo de identifica\u00C3\u00A7\u00C3\u00A3o do cart\u00C3\u00A3o (id).
+   * @param validaCVV validaCVV
+   * @return Object
+   */
+  public Object validarCVVUsingPOST(Long id, ValidaCVVRequest validaCVV) throws ApiException {
+    Object postBody = validaCVV;
+    
+     // verify the required parameter 'id' is set
+     if (id == null) {
+        throw new ApiException(400, "Missing the required parameter 'id' when calling validarCVVUsingPOST");
+     }
+     
+     // verify the required parameter 'validaCVV' is set
+     if (validaCVV == null) {
+        throw new ApiException(400, "Missing the required parameter 'validaCVV' when calling validarCVVUsingPOST");
+     }
+     
+    // create path and map variables
+    String path = "/api/cartoes/{id}/validar-cvv".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    //String[] authNames = new String[] {"client_id",  };
+    String[] authNames = new String[] {"client_id", "access_token"};
+
+    
+    GenericType<Object> returnType = new GenericType<Object>() {};
     return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
     
   }
@@ -1495,4 +1552,3 @@ public class CartaoApi {
   }
   
 }
-

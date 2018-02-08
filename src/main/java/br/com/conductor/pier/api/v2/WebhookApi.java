@@ -10,16 +10,12 @@ import br.com.conductor.pier.api.v2.invoker.Pair;
 import br.com.conductor.pier.api.v2.model.WebHookResponse;
 import br.com.conductor.pier.api.v2.model.PageWebHookResponse;
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class WebhookApi {
   private ApiClient apiClient;
 
@@ -49,22 +45,22 @@ public class WebhookApi {
    * @param status Status
    * @return WebHookResponse
    */
-  public WebHookResponse alterarUsingPUT20(Long id, String tipoEvento, String url, String status) throws ApiException {
+  public WebHookResponse alterarUsingPUT22(Long id, String tipoEvento, String url, String status) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
      if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling alterarUsingPUT20");
+        throw new ApiException(400, "Missing the required parameter 'id' when calling alterarUsingPUT22");
      }
      
      // verify the required parameter 'tipoEvento' is set
      if (tipoEvento == null) {
-        throw new ApiException(400, "Missing the required parameter 'tipoEvento' when calling alterarUsingPUT20");
+        throw new ApiException(400, "Missing the required parameter 'tipoEvento' when calling alterarUsingPUT22");
      }
      
      // verify the required parameter 'url' is set
      if (url == null) {
-        throw new ApiException(400, "Missing the required parameter 'url' when calling alterarUsingPUT20");
+        throw new ApiException(400, "Missing the required parameter 'url' when calling alterarUsingPUT22");
      }
      
     // create path and map variables
@@ -113,12 +109,12 @@ public class WebhookApi {
    * @param id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Webhook (id).
    * @return WebHookResponse
    */
-  public WebHookResponse consultarUsingGET41(Long id) throws ApiException {
+  public WebHookResponse consultarUsingGET44(Long id) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
      if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET41");
+        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET44");
      }
      
     // create path and map variables
@@ -167,7 +163,7 @@ public class WebhookApi {
    * @param url URL que a ser consumida pelo WebHook
    * @return PageWebHookResponse
    */
-  public PageWebHookResponse listarUsingGET46(List<String> sort, Integer page, Integer limit, Long id, String tipoEvento, String metodo, String url) throws ApiException {
+  public PageWebHookResponse listarUsingGET53(List<String> sort, Integer page, Integer limit, Long id, String tipoEvento, String metodo, String url) throws ApiException {
     Object postBody = null;
     
     // create path and map variables
@@ -224,17 +220,17 @@ public class WebhookApi {
    * @param url URL que a ser consumida pelo WebHook
    * @return WebHookResponse
    */
-  public WebHookResponse salvarUsingPOST26(String tipoEvento, String url) throws ApiException {
+  public WebHookResponse salvarUsingPOST30(String tipoEvento, String url) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'tipoEvento' is set
      if (tipoEvento == null) {
-        throw new ApiException(400, "Missing the required parameter 'tipoEvento' when calling salvarUsingPOST26");
+        throw new ApiException(400, "Missing the required parameter 'tipoEvento' when calling salvarUsingPOST30");
      }
      
      // verify the required parameter 'url' is set
      if (url == null) {
-        throw new ApiException(400, "Missing the required parameter 'url' when calling salvarUsingPOST26");
+        throw new ApiException(400, "Missing the required parameter 'url' when calling salvarUsingPOST30");
      }
      
     // create path and map variables
@@ -275,4 +271,3 @@ public class WebhookApi {
   }
   
 }
-

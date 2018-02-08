@@ -10,16 +10,12 @@ import br.com.conductor.pier.api.v2.invoker.Pair;
 import br.com.conductor.pier.api.v2.model.PageTipoDebitoRecorrenteResponse;
 import java.math.BigDecimal;
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class DebitoRecorrenteApi {
   private ApiClient apiClient;
 
@@ -54,12 +50,12 @@ public class DebitoRecorrenteApi {
    * @param dataHoraUltimoPagamento Data do \u00C3\u00BAltimo pagamento efetuado.
    * @return PageTipoDebitoRecorrenteResponse
    */
-  public PageTipoDebitoRecorrenteResponse listarUsingGET12(Long idConta, Long idTipoDebitoRecorrente, List<String> sort, Integer page, Integer limit, String dataHoraInicio, String dataHoraFim, Boolean ativo, String dataHoraUltimoPagamento) throws ApiException {
+  public PageTipoDebitoRecorrenteResponse listarUsingGET15(Long idConta, Long idTipoDebitoRecorrente, List<String> sort, Integer page, Integer limit, String dataHoraInicio, String dataHoraFim, Boolean ativo, String dataHoraUltimoPagamento) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
      if (idConta == null) {
-        throw new ApiException(400, "Missing the required parameter 'idConta' when calling listarUsingGET12");
+        throw new ApiException(400, "Missing the required parameter 'idConta' when calling listarUsingGET15");
      }
      
     // create path and map variables
@@ -125,7 +121,7 @@ public class DebitoRecorrenteApi {
    * @param flagAtivo Flag que identifica se o tipo d\u00C3\u00A9bito recorrente est\u00C3\u00A1 ativo.
    * @return PageTipoDebitoRecorrenteResponse
    */
-  public PageTipoDebitoRecorrenteResponse listarUsingGET36(List<String> sort, Integer page, Integer limit, Long id, String descricao, BigDecimal valor, Boolean flagAtivo) throws ApiException {
+  public PageTipoDebitoRecorrenteResponse listarUsingGET41(List<String> sort, Integer page, Integer limit, Long id, String descricao, BigDecimal valor, Boolean flagAtivo) throws ApiException {
     Object postBody = null;
     
     // create path and map variables
@@ -176,4 +172,3 @@ public class DebitoRecorrenteApi {
   }
   
 }
-

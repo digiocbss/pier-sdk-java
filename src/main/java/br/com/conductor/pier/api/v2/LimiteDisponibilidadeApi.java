@@ -10,16 +10,12 @@ import br.com.conductor.pier.api.v2.invoker.Pair;
 import br.com.conductor.pier.api.v2.model.LimiteDisponibilidadeResponse;
 import java.math.BigDecimal;
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class LimiteDisponibilidadeApi {
   private ApiClient apiClient;
 
@@ -59,12 +55,12 @@ public class LimiteDisponibilidadeApi {
    * @param limiteMaximo Valor m\u00C3\u00A1ximo do limite de cr\u00C3\u00A9dito para realizar transa\u00C3\u00A7\u00C3\u00B5es.
    * @return LimiteDisponibilidadeResponse
    */
-  public LimiteDisponibilidadeResponse alterarUsingPUT8(Long idConta, BigDecimal limiteGlobal, BigDecimal limiteCompra, BigDecimal limiteParcelado, BigDecimal limiteParcelas, BigDecimal limiteSaqueGlobal, BigDecimal limiteSaquePeriodo, BigDecimal limiteConsignado, BigDecimal limiteInternacionalCompra, BigDecimal limiteInternacionalParcelado, BigDecimal limiteInternacionalParcelas, BigDecimal limiteInternacionalSaqueGlobal, BigDecimal limiteInternacionalSaquePeriodo, BigDecimal limiteMaximo) throws ApiException {
+  public LimiteDisponibilidadeResponse alterarUsingPUT9(Long idConta, BigDecimal limiteGlobal, BigDecimal limiteCompra, BigDecimal limiteParcelado, BigDecimal limiteParcelas, BigDecimal limiteSaqueGlobal, BigDecimal limiteSaquePeriodo, BigDecimal limiteConsignado, BigDecimal limiteInternacionalCompra, BigDecimal limiteInternacionalParcelado, BigDecimal limiteInternacionalParcelas, BigDecimal limiteInternacionalSaqueGlobal, BigDecimal limiteInternacionalSaquePeriodo, BigDecimal limiteMaximo) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
      if (idConta == null) {
-        throw new ApiException(400, "Missing the required parameter 'idConta' when calling alterarUsingPUT8");
+        throw new ApiException(400, "Missing the required parameter 'idConta' when calling alterarUsingPUT9");
      }
      
     // create path and map variables
@@ -134,12 +130,12 @@ public class LimiteDisponibilidadeApi {
    * @param idConta Id Conta
    * @return LimiteDisponibilidadeResponse
    */
-  public LimiteDisponibilidadeResponse consultarUsingGET18(Long idConta) throws ApiException {
+  public LimiteDisponibilidadeResponse consultarUsingGET19(Long idConta) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
      if (idConta == null) {
-        throw new ApiException(400, "Missing the required parameter 'idConta' when calling consultarUsingGET18");
+        throw new ApiException(400, "Missing the required parameter 'idConta' when calling consultarUsingGET19");
      }
      
     // create path and map variables
@@ -178,4 +174,3 @@ public class LimiteDisponibilidadeApi {
   }
   
 }
-

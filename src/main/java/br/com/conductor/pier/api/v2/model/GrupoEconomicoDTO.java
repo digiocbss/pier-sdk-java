@@ -9,19 +9,24 @@ import java.math.BigDecimal;
 
 
 
-
-
 /**
- * Representa\u00C3\u00A7\u00C3\u00A3o da resposta do recurso de credor
+ * Par\u00C3\u00A2metros de requisi\u00C3\u00A7\u00C3\u00A3o para cadastrar grupo econ\u00C3\u00B4mico
  **/
 
-@ApiModel(description = "Representa\u00C3\u00A7\u00C3\u00A3o da resposta do recurso de credor")
+@ApiModel(description = "Par\u00C3\u00A2metros de requisi\u00C3\u00A7\u00C3\u00A3o para cadastrar grupo econ\u00C3\u00B4mico")
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-public class CredorResponse   {
+public class GrupoEconomicoDTO   {
   
-  private Long id = null;
-  private Long idPessoaJuridica = null;
-  private String nome = null;
+  private String razaoSocial = null;
+  private String nomeCredor = null;
+  private String numeroReceitaFederal = null;
+  private String inscricaoEstadual = null;
+  private String contato = null;
+  private Integer banco = null;
+  private Integer agencia = null;
+  private String digitoAgencia = null;
+  private String contaCorrente = null;
+  private String digitoContaCorrente = null;
 
 
   public enum PeriodicidadeEnum {
@@ -76,7 +81,6 @@ public class CredorResponse   {
   private Integer pagamentoDecendialTerceiro = null;
   private Integer pagamentoQuinzenalPrimeiro = null;
   private Integer pagamentoQuinzenalSegundo = null;
-  private Boolean credorBanco = null;
   private BigDecimal percentualRAV = null;
 
 
@@ -103,361 +107,102 @@ public class CredorResponse   {
   private BigDecimal taxaAdm = null;
   private BigDecimal taxaBanco = null;
   private BigDecimal limiteRAV = null;
-  private Long idCredorRAV = null;
-  private Integer banco = null;
-  private Integer agencia = null;
-  private String digitoVerificadorAgencia = null;
-  private String contaCorrente = null;
-  private String digitoVerificadorContaCorrente = null;
-  private String usuario = null;
 
   
   /**
-   * C\u00C3\u00B3digo identificador do credor
+   * Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica
    **/
-  public CredorResponse id(Long id) {
-    this.id = id;
+  public GrupoEconomicoDTO razaoSocial(String razaoSocial) {
+    this.razaoSocial = razaoSocial;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "C\u00C3\u00B3digo identificador do credor")
-  @JsonProperty("id")
-  public Long getId() {
-    return id;
+  @ApiModelProperty(example = "RazÃ£o social exemplo", required = true, value = "Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica")
+  @JsonProperty("razaoSocial")
+  public String getRazaoSocial() {
+    return razaoSocial;
   }
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  
-  /**
-   * Identificador da pessoa jur\u00C3\u00ADdica do credor
-   **/
-  public CredorResponse idPessoaJuridica(Long idPessoaJuridica) {
-    this.idPessoaJuridica = idPessoaJuridica;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "10", value = "Identificador da pessoa jur\u00C3\u00ADdica do credor")
-  @JsonProperty("idPessoaJuridica")
-  public Long getIdPessoaJuridica() {
-    return idPessoaJuridica;
-  }
-  public void setIdPessoaJuridica(Long idPessoaJuridica) {
-    this.idPessoaJuridica = idPessoaJuridica;
+  public void setRazaoSocial(String razaoSocial) {
+    this.razaoSocial = razaoSocial;
   }
 
   
   /**
    * Nome do credor
    **/
-  public CredorResponse nome(String nome) {
-    this.nome = nome;
+  public GrupoEconomicoDTO nomeCredor(String nomeCredor) {
+    this.nomeCredor = nomeCredor;
     return this;
   }
   
   @ApiModelProperty(example = "Exemplo", value = "Nome do credor")
-  @JsonProperty("nome")
-  public String getNome() {
-    return nome;
+  @JsonProperty("nomeCredor")
+  public String getNomeCredor() {
+    return nomeCredor;
   }
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-
-  
-  /**
-   * Periodicidade do pagamento
-   **/
-  public CredorResponse periodicidade(PeriodicidadeEnum periodicidade) {
-    this.periodicidade = periodicidade;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "DIARIO", value = "Periodicidade do pagamento")
-  @JsonProperty("periodicidade")
-  public PeriodicidadeEnum getPeriodicidade() {
-    return periodicidade;
-  }
-  public void setPeriodicidade(PeriodicidadeEnum periodicidade) {
-    this.periodicidade = periodicidade;
+  public void setNomeCredor(String nomeCredor) {
+    this.nomeCredor = nomeCredor;
   }
 
   
   /**
-   * Dia para pagamento semanal
+   * N\u00C3\u00BAmero da Receita Federal
    **/
-  public CredorResponse pagamentoSemanal(PagamentoSemanalEnum pagamentoSemanal) {
-    this.pagamentoSemanal = pagamentoSemanal;
+  public GrupoEconomicoDTO numeroReceitaFederal(String numeroReceitaFederal) {
+    this.numeroReceitaFederal = numeroReceitaFederal;
     return this;
   }
   
-  @ApiModelProperty(example = "SEGUNDA", value = "Dia para pagamento semanal")
-  @JsonProperty("pagamentoSemanal")
-  public PagamentoSemanalEnum getPagamentoSemanal() {
-    return pagamentoSemanal;
+  @ApiModelProperty(example = "00405702000155", required = true, value = "N\u00C3\u00BAmero da Receita Federal")
+  @JsonProperty("numeroReceitaFederal")
+  public String getNumeroReceitaFederal() {
+    return numeroReceitaFederal;
   }
-  public void setPagamentoSemanal(PagamentoSemanalEnum pagamentoSemanal) {
-    this.pagamentoSemanal = pagamentoSemanal;
+  public void setNumeroReceitaFederal(String numeroReceitaFederal) {
+    this.numeroReceitaFederal = numeroReceitaFederal;
   }
 
   
   /**
-   * Dia da data para o pagamento mensal
+   * N\u00C3\u00BAmero da inscri\u00C3\u00A7\u00C3\u00A3o estadual
    **/
-  public CredorResponse pagamentoMensal(Integer pagamentoMensal) {
-    this.pagamentoMensal = pagamentoMensal;
+  public GrupoEconomicoDTO inscricaoEstadual(String inscricaoEstadual) {
+    this.inscricaoEstadual = inscricaoEstadual;
     return this;
   }
   
-  @ApiModelProperty(example = "10", value = "Dia da data para o pagamento mensal")
-  @JsonProperty("pagamentoMensal")
-  public Integer getPagamentoMensal() {
-    return pagamentoMensal;
+  @ApiModelProperty(example = "14511", value = "N\u00C3\u00BAmero da inscri\u00C3\u00A7\u00C3\u00A3o estadual")
+  @JsonProperty("inscricaoEstadual")
+  public String getInscricaoEstadual() {
+    return inscricaoEstadual;
   }
-  public void setPagamentoMensal(Integer pagamentoMensal) {
-    this.pagamentoMensal = pagamentoMensal;
+  public void setInscricaoEstadual(String inscricaoEstadual) {
+    this.inscricaoEstadual = inscricaoEstadual;
   }
 
   
   /**
-   * Dia da data para o primeiro pagamento decendial
+   * Nome da pessoa para entrar em contato
    **/
-  public CredorResponse pagamentoDecendialPrimeiro(Integer pagamentoDecendialPrimeiro) {
-    this.pagamentoDecendialPrimeiro = pagamentoDecendialPrimeiro;
+  public GrupoEconomicoDTO contato(String contato) {
+    this.contato = contato;
     return this;
   }
   
-  @ApiModelProperty(example = "5", value = "Dia da data para o primeiro pagamento decendial")
-  @JsonProperty("pagamentoDecendialPrimeiro")
-  public Integer getPagamentoDecendialPrimeiro() {
-    return pagamentoDecendialPrimeiro;
+  @ApiModelProperty(example = "NOME DE PESSOA PARA CONTATO", value = "Nome da pessoa para entrar em contato")
+  @JsonProperty("contato")
+  public String getContato() {
+    return contato;
   }
-  public void setPagamentoDecendialPrimeiro(Integer pagamentoDecendialPrimeiro) {
-    this.pagamentoDecendialPrimeiro = pagamentoDecendialPrimeiro;
-  }
-
-  
-  /**
-   * Dia da data para o segundo pagamento decendial
-   **/
-  public CredorResponse pagamentoDecendialSegundo(Integer pagamentoDecendialSegundo) {
-    this.pagamentoDecendialSegundo = pagamentoDecendialSegundo;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "15", value = "Dia da data para o segundo pagamento decendial")
-  @JsonProperty("pagamentoDecendialSegundo")
-  public Integer getPagamentoDecendialSegundo() {
-    return pagamentoDecendialSegundo;
-  }
-  public void setPagamentoDecendialSegundo(Integer pagamentoDecendialSegundo) {
-    this.pagamentoDecendialSegundo = pagamentoDecendialSegundo;
-  }
-
-  
-  /**
-   * Dia da data para o terceiro pagamento decendial
-   **/
-  public CredorResponse pagamentoDecendialTerceiro(Integer pagamentoDecendialTerceiro) {
-    this.pagamentoDecendialTerceiro = pagamentoDecendialTerceiro;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "25", value = "Dia da data para o terceiro pagamento decendial")
-  @JsonProperty("pagamentoDecendialTerceiro")
-  public Integer getPagamentoDecendialTerceiro() {
-    return pagamentoDecendialTerceiro;
-  }
-  public void setPagamentoDecendialTerceiro(Integer pagamentoDecendialTerceiro) {
-    this.pagamentoDecendialTerceiro = pagamentoDecendialTerceiro;
-  }
-
-  
-  /**
-   * Dia da data para o primeiro pagamento quinzenal
-   **/
-  public CredorResponse pagamentoQuinzenalPrimeiro(Integer pagamentoQuinzenalPrimeiro) {
-    this.pagamentoQuinzenalPrimeiro = pagamentoQuinzenalPrimeiro;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "5", value = "Dia da data para o primeiro pagamento quinzenal")
-  @JsonProperty("pagamentoQuinzenalPrimeiro")
-  public Integer getPagamentoQuinzenalPrimeiro() {
-    return pagamentoQuinzenalPrimeiro;
-  }
-  public void setPagamentoQuinzenalPrimeiro(Integer pagamentoQuinzenalPrimeiro) {
-    this.pagamentoQuinzenalPrimeiro = pagamentoQuinzenalPrimeiro;
-  }
-
-  
-  /**
-   * Dia da data para o segundo pagamento quinzenal
-   **/
-  public CredorResponse pagamentoQuinzenalSegundo(Integer pagamentoQuinzenalSegundo) {
-    this.pagamentoQuinzenalSegundo = pagamentoQuinzenalSegundo;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "20", value = "Dia da data para o segundo pagamento quinzenal")
-  @JsonProperty("pagamentoQuinzenalSegundo")
-  public Integer getPagamentoQuinzenalSegundo() {
-    return pagamentoQuinzenalSegundo;
-  }
-  public void setPagamentoQuinzenalSegundo(Integer pagamentoQuinzenalSegundo) {
-    this.pagamentoQuinzenalSegundo = pagamentoQuinzenalSegundo;
-  }
-
-  
-  /**
-   * Indica se este credor pode ser um Credor RAV de outros credores
-   **/
-  public CredorResponse credorBanco(Boolean credorBanco) {
-    this.credorBanco = credorBanco;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "true", value = "Indica se este credor pode ser um Credor RAV de outros credores")
-  @JsonProperty("credorBanco")
-  public Boolean getCredorBanco() {
-    return credorBanco;
-  }
-  public void setCredorBanco(Boolean credorBanco) {
-    this.credorBanco = credorBanco;
-  }
-
-  
-  /**
-   * Valor percentual do RAV do credor
-   **/
-  public CredorResponse percentualRAV(BigDecimal percentualRAV) {
-    this.percentualRAV = percentualRAV;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "0.015", value = "Valor percentual do RAV do credor")
-  @JsonProperty("percentualRAV")
-  public BigDecimal getPercentualRAV() {
-    return percentualRAV;
-  }
-  public void setPercentualRAV(BigDecimal percentualRAV) {
-    this.percentualRAV = percentualRAV;
-  }
-
-  
-  /**
-   * Indica se o credor recebe RAV e o tipo
-   **/
-  public CredorResponse recebeRAV(RecebeRAVEnum recebeRAV) {
-    this.recebeRAV = recebeRAV;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "NAO_TEM_PERMISSAO_RAV", value = "Indica se o credor recebe RAV e o tipo")
-  @JsonProperty("recebeRAV")
-  public RecebeRAVEnum getRecebeRAV() {
-    return recebeRAV;
-  }
-  public void setRecebeRAV(RecebeRAVEnum recebeRAV) {
-    this.recebeRAV = recebeRAV;
-  }
-
-  
-  /**
-   * Percentual Multiplica
-   **/
-  public CredorResponse percentualMultiplica(BigDecimal percentualMultiplica) {
-    this.percentualMultiplica = percentualMultiplica;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "0.1", value = "Percentual Multiplica")
-  @JsonProperty("percentualMultiplica")
-  public BigDecimal getPercentualMultiplica() {
-    return percentualMultiplica;
-  }
-  public void setPercentualMultiplica(BigDecimal percentualMultiplica) {
-    this.percentualMultiplica = percentualMultiplica;
-  }
-
-  
-  /**
-   * Taxa Administrativa
-   **/
-  public CredorResponse taxaAdm(BigDecimal taxaAdm) {
-    this.taxaAdm = taxaAdm;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "0.1", value = "Taxa Administrativa")
-  @JsonProperty("taxaAdm")
-  public BigDecimal getTaxaAdm() {
-    return taxaAdm;
-  }
-  public void setTaxaAdm(BigDecimal taxaAdm) {
-    this.taxaAdm = taxaAdm;
-  }
-
-  
-  /**
-   * Taxa do Banco
-   **/
-  public CredorResponse taxaBanco(BigDecimal taxaBanco) {
-    this.taxaBanco = taxaBanco;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "0.1", value = "Taxa do Banco")
-  @JsonProperty("taxaBanco")
-  public BigDecimal getTaxaBanco() {
-    return taxaBanco;
-  }
-  public void setTaxaBanco(BigDecimal taxaBanco) {
-    this.taxaBanco = taxaBanco;
-  }
-
-  
-  /**
-   * Valor limite do RAV
-   **/
-  public CredorResponse limiteRAV(BigDecimal limiteRAV) {
-    this.limiteRAV = limiteRAV;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "0.015", value = "Valor limite do RAV")
-  @JsonProperty("limiteRAV")
-  public BigDecimal getLimiteRAV() {
-    return limiteRAV;
-  }
-  public void setLimiteRAV(BigDecimal limiteRAV) {
-    this.limiteRAV = limiteRAV;
-  }
-
-  
-  /**
-   * C\u00C3\u00B3digo identificador do credor RAV
-   **/
-  public CredorResponse idCredorRAV(Long idCredorRAV) {
-    this.idCredorRAV = idCredorRAV;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "10", value = "C\u00C3\u00B3digo identificador do credor RAV")
-  @JsonProperty("idCredorRAV")
-  public Long getIdCredorRAV() {
-    return idCredorRAV;
-  }
-  public void setIdCredorRAV(Long idCredorRAV) {
-    this.idCredorRAV = idCredorRAV;
+  public void setContato(String contato) {
+    this.contato = contato;
   }
 
   
   /**
    * C\u00C3\u00B3digo do banco
    **/
-  public CredorResponse banco(Integer banco) {
+  public GrupoEconomicoDTO banco(Integer banco) {
     this.banco = banco;
     return this;
   }
@@ -475,7 +220,7 @@ public class CredorResponse   {
   /**
    * Raz\u00C3\u00A3o social da pessoa jur\u00C3\u00ADdica
    **/
-  public CredorResponse agencia(Integer agencia) {
+  public GrupoEconomicoDTO agencia(Integer agencia) {
     this.agencia = agencia;
     return this;
   }
@@ -493,25 +238,25 @@ public class CredorResponse   {
   /**
    * D\u00C3\u00ADgito Verificador da ag\u00C3\u00AAncia
    **/
-  public CredorResponse digitoVerificadorAgencia(String digitoVerificadorAgencia) {
-    this.digitoVerificadorAgencia = digitoVerificadorAgencia;
+  public GrupoEconomicoDTO digitoAgencia(String digitoAgencia) {
+    this.digitoAgencia = digitoAgencia;
     return this;
   }
   
-  @ApiModelProperty(example = "X", value = "D\u00C3\u00ADgito Verificador da ag\u00C3\u00AAncia")
-  @JsonProperty("digitoVerificadorAgencia")
-  public String getDigitoVerificadorAgencia() {
-    return digitoVerificadorAgencia;
+  @ApiModelProperty(example = "XX", value = "D\u00C3\u00ADgito Verificador da ag\u00C3\u00AAncia")
+  @JsonProperty("digitoAgencia")
+  public String getDigitoAgencia() {
+    return digitoAgencia;
   }
-  public void setDigitoVerificadorAgencia(String digitoVerificadorAgencia) {
-    this.digitoVerificadorAgencia = digitoVerificadorAgencia;
+  public void setDigitoAgencia(String digitoAgencia) {
+    this.digitoAgencia = digitoAgencia;
   }
 
   
   /**
    * C\u00C3\u00B3digo da Conta Corrente
    **/
-  public CredorResponse contaCorrente(String contaCorrente) {
+  public GrupoEconomicoDTO contaCorrente(String contaCorrente) {
     this.contaCorrente = contaCorrente;
     return this;
   }
@@ -529,36 +274,270 @@ public class CredorResponse   {
   /**
    * D\u00C3\u00ADgito Verificador da Conta Corrente
    **/
-  public CredorResponse digitoVerificadorContaCorrente(String digitoVerificadorContaCorrente) {
-    this.digitoVerificadorContaCorrente = digitoVerificadorContaCorrente;
+  public GrupoEconomicoDTO digitoContaCorrente(String digitoContaCorrente) {
+    this.digitoContaCorrente = digitoContaCorrente;
     return this;
   }
   
-  @ApiModelProperty(example = "1", value = "D\u00C3\u00ADgito Verificador da Conta Corrente")
-  @JsonProperty("digitoVerificadorContaCorrente")
-  public String getDigitoVerificadorContaCorrente() {
-    return digitoVerificadorContaCorrente;
+  @ApiModelProperty(example = "11", value = "D\u00C3\u00ADgito Verificador da Conta Corrente")
+  @JsonProperty("digitoContaCorrente")
+  public String getDigitoContaCorrente() {
+    return digitoContaCorrente;
   }
-  public void setDigitoVerificadorContaCorrente(String digitoVerificadorContaCorrente) {
-    this.digitoVerificadorContaCorrente = digitoVerificadorContaCorrente;
+  public void setDigitoContaCorrente(String digitoContaCorrente) {
+    this.digitoContaCorrente = digitoContaCorrente;
   }
 
   
   /**
-   * Login do usu\u00C3\u00A1rio para registro da inser\u00C3\u00A7\u00C3\u00A3o
+   * Periodicidade do pagamento
    **/
-  public CredorResponse usuario(String usuario) {
-    this.usuario = usuario;
+  public GrupoEconomicoDTO periodicidade(PeriodicidadeEnum periodicidade) {
+    this.periodicidade = periodicidade;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Login do usu\u00C3\u00A1rio para registro da inser\u00C3\u00A7\u00C3\u00A3o")
-  @JsonProperty("usuario")
-  public String getUsuario() {
-    return usuario;
+  @ApiModelProperty(example = "DIARIO", required = true, value = "Periodicidade do pagamento")
+  @JsonProperty("periodicidade")
+  public PeriodicidadeEnum getPeriodicidade() {
+    return periodicidade;
   }
-  public void setUsuario(String usuario) {
-    this.usuario = usuario;
+  public void setPeriodicidade(PeriodicidadeEnum periodicidade) {
+    this.periodicidade = periodicidade;
+  }
+
+  
+  /**
+   * Dia para pagamento semanal
+   **/
+  public GrupoEconomicoDTO pagamentoSemanal(PagamentoSemanalEnum pagamentoSemanal) {
+    this.pagamentoSemanal = pagamentoSemanal;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "SEGUNDA", value = "Dia para pagamento semanal")
+  @JsonProperty("pagamentoSemanal")
+  public PagamentoSemanalEnum getPagamentoSemanal() {
+    return pagamentoSemanal;
+  }
+  public void setPagamentoSemanal(PagamentoSemanalEnum pagamentoSemanal) {
+    this.pagamentoSemanal = pagamentoSemanal;
+  }
+
+  
+  /**
+   * Dia da data para o pagamento mensal
+   **/
+  public GrupoEconomicoDTO pagamentoMensal(Integer pagamentoMensal) {
+    this.pagamentoMensal = pagamentoMensal;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "10", value = "Dia da data para o pagamento mensal")
+  @JsonProperty("pagamentoMensal")
+  public Integer getPagamentoMensal() {
+    return pagamentoMensal;
+  }
+  public void setPagamentoMensal(Integer pagamentoMensal) {
+    this.pagamentoMensal = pagamentoMensal;
+  }
+
+  
+  /**
+   * Dia da data para o primeiro pagamento decendial
+   **/
+  public GrupoEconomicoDTO pagamentoDecendialPrimeiro(Integer pagamentoDecendialPrimeiro) {
+    this.pagamentoDecendialPrimeiro = pagamentoDecendialPrimeiro;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "5", value = "Dia da data para o primeiro pagamento decendial")
+  @JsonProperty("pagamentoDecendialPrimeiro")
+  public Integer getPagamentoDecendialPrimeiro() {
+    return pagamentoDecendialPrimeiro;
+  }
+  public void setPagamentoDecendialPrimeiro(Integer pagamentoDecendialPrimeiro) {
+    this.pagamentoDecendialPrimeiro = pagamentoDecendialPrimeiro;
+  }
+
+  
+  /**
+   * Dia da data para o segundo pagamento decendial
+   **/
+  public GrupoEconomicoDTO pagamentoDecendialSegundo(Integer pagamentoDecendialSegundo) {
+    this.pagamentoDecendialSegundo = pagamentoDecendialSegundo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "15", value = "Dia da data para o segundo pagamento decendial")
+  @JsonProperty("pagamentoDecendialSegundo")
+  public Integer getPagamentoDecendialSegundo() {
+    return pagamentoDecendialSegundo;
+  }
+  public void setPagamentoDecendialSegundo(Integer pagamentoDecendialSegundo) {
+    this.pagamentoDecendialSegundo = pagamentoDecendialSegundo;
+  }
+
+  
+  /**
+   * Dia da data para o terceiro pagamento decendial
+   **/
+  public GrupoEconomicoDTO pagamentoDecendialTerceiro(Integer pagamentoDecendialTerceiro) {
+    this.pagamentoDecendialTerceiro = pagamentoDecendialTerceiro;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "25", value = "Dia da data para o terceiro pagamento decendial")
+  @JsonProperty("pagamentoDecendialTerceiro")
+  public Integer getPagamentoDecendialTerceiro() {
+    return pagamentoDecendialTerceiro;
+  }
+  public void setPagamentoDecendialTerceiro(Integer pagamentoDecendialTerceiro) {
+    this.pagamentoDecendialTerceiro = pagamentoDecendialTerceiro;
+  }
+
+  
+  /**
+   * Dia da data para o primeiro pagamento quinzenal
+   **/
+  public GrupoEconomicoDTO pagamentoQuinzenalPrimeiro(Integer pagamentoQuinzenalPrimeiro) {
+    this.pagamentoQuinzenalPrimeiro = pagamentoQuinzenalPrimeiro;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "5", value = "Dia da data para o primeiro pagamento quinzenal")
+  @JsonProperty("pagamentoQuinzenalPrimeiro")
+  public Integer getPagamentoQuinzenalPrimeiro() {
+    return pagamentoQuinzenalPrimeiro;
+  }
+  public void setPagamentoQuinzenalPrimeiro(Integer pagamentoQuinzenalPrimeiro) {
+    this.pagamentoQuinzenalPrimeiro = pagamentoQuinzenalPrimeiro;
+  }
+
+  
+  /**
+   * Dia da data para o segundo pagamento quinzenal
+   **/
+  public GrupoEconomicoDTO pagamentoQuinzenalSegundo(Integer pagamentoQuinzenalSegundo) {
+    this.pagamentoQuinzenalSegundo = pagamentoQuinzenalSegundo;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "20", value = "Dia da data para o segundo pagamento quinzenal")
+  @JsonProperty("pagamentoQuinzenalSegundo")
+  public Integer getPagamentoQuinzenalSegundo() {
+    return pagamentoQuinzenalSegundo;
+  }
+  public void setPagamentoQuinzenalSegundo(Integer pagamentoQuinzenalSegundo) {
+    this.pagamentoQuinzenalSegundo = pagamentoQuinzenalSegundo;
+  }
+
+  
+  /**
+   * Valor percentual do RAV do credor
+   **/
+  public GrupoEconomicoDTO percentualRAV(BigDecimal percentualRAV) {
+    this.percentualRAV = percentualRAV;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "0.015", required = true, value = "Valor percentual do RAV do credor")
+  @JsonProperty("percentualRAV")
+  public BigDecimal getPercentualRAV() {
+    return percentualRAV;
+  }
+  public void setPercentualRAV(BigDecimal percentualRAV) {
+    this.percentualRAV = percentualRAV;
+  }
+
+  
+  /**
+   * Indica se o credor recebe RAV e o tipo
+   **/
+  public GrupoEconomicoDTO recebeRAV(RecebeRAVEnum recebeRAV) {
+    this.recebeRAV = recebeRAV;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "NAO_TEM_PERMISSAO_RAV", value = "Indica se o credor recebe RAV e o tipo")
+  @JsonProperty("recebeRAV")
+  public RecebeRAVEnum getRecebeRAV() {
+    return recebeRAV;
+  }
+  public void setRecebeRAV(RecebeRAVEnum recebeRAV) {
+    this.recebeRAV = recebeRAV;
+  }
+
+  
+  /**
+   * Percentual Multiplica
+   **/
+  public GrupoEconomicoDTO percentualMultiplica(BigDecimal percentualMultiplica) {
+    this.percentualMultiplica = percentualMultiplica;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "0.1", value = "Percentual Multiplica")
+  @JsonProperty("percentualMultiplica")
+  public BigDecimal getPercentualMultiplica() {
+    return percentualMultiplica;
+  }
+  public void setPercentualMultiplica(BigDecimal percentualMultiplica) {
+    this.percentualMultiplica = percentualMultiplica;
+  }
+
+  
+  /**
+   * Taxa Administrativa
+   **/
+  public GrupoEconomicoDTO taxaAdm(BigDecimal taxaAdm) {
+    this.taxaAdm = taxaAdm;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "0.1", value = "Taxa Administrativa")
+  @JsonProperty("taxaAdm")
+  public BigDecimal getTaxaAdm() {
+    return taxaAdm;
+  }
+  public void setTaxaAdm(BigDecimal taxaAdm) {
+    this.taxaAdm = taxaAdm;
+  }
+
+  
+  /**
+   * Taxa do Banco
+   **/
+  public GrupoEconomicoDTO taxaBanco(BigDecimal taxaBanco) {
+    this.taxaBanco = taxaBanco;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "0.1", value = "Taxa do Banco")
+  @JsonProperty("taxaBanco")
+  public BigDecimal getTaxaBanco() {
+    return taxaBanco;
+  }
+  public void setTaxaBanco(BigDecimal taxaBanco) {
+    this.taxaBanco = taxaBanco;
+  }
+
+  
+  /**
+   * Valor limite do RAV
+   **/
+  public GrupoEconomicoDTO limiteRAV(BigDecimal limiteRAV) {
+    this.limiteRAV = limiteRAV;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "0.015", value = "Valor limite do RAV")
+  @JsonProperty("limiteRAV")
+  public BigDecimal getLimiteRAV() {
+    return limiteRAV;
+  }
+  public void setLimiteRAV(BigDecimal limiteRAV) {
+    this.limiteRAV = limiteRAV;
   }
 
   
@@ -571,47 +550,53 @@ public class CredorResponse   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CredorResponse credorResponse = (CredorResponse) o;
-    return Objects.equals(this.id, credorResponse.id) &&
-        Objects.equals(this.idPessoaJuridica, credorResponse.idPessoaJuridica) &&
-        Objects.equals(this.nome, credorResponse.nome) &&
-        Objects.equals(this.periodicidade, credorResponse.periodicidade) &&
-        Objects.equals(this.pagamentoSemanal, credorResponse.pagamentoSemanal) &&
-        Objects.equals(this.pagamentoMensal, credorResponse.pagamentoMensal) &&
-        Objects.equals(this.pagamentoDecendialPrimeiro, credorResponse.pagamentoDecendialPrimeiro) &&
-        Objects.equals(this.pagamentoDecendialSegundo, credorResponse.pagamentoDecendialSegundo) &&
-        Objects.equals(this.pagamentoDecendialTerceiro, credorResponse.pagamentoDecendialTerceiro) &&
-        Objects.equals(this.pagamentoQuinzenalPrimeiro, credorResponse.pagamentoQuinzenalPrimeiro) &&
-        Objects.equals(this.pagamentoQuinzenalSegundo, credorResponse.pagamentoQuinzenalSegundo) &&
-        Objects.equals(this.credorBanco, credorResponse.credorBanco) &&
-        Objects.equals(this.percentualRAV, credorResponse.percentualRAV) &&
-        Objects.equals(this.recebeRAV, credorResponse.recebeRAV) &&
-        Objects.equals(this.percentualMultiplica, credorResponse.percentualMultiplica) &&
-        Objects.equals(this.taxaAdm, credorResponse.taxaAdm) &&
-        Objects.equals(this.taxaBanco, credorResponse.taxaBanco) &&
-        Objects.equals(this.limiteRAV, credorResponse.limiteRAV) &&
-        Objects.equals(this.idCredorRAV, credorResponse.idCredorRAV) &&
-        Objects.equals(this.banco, credorResponse.banco) &&
-        Objects.equals(this.agencia, credorResponse.agencia) &&
-        Objects.equals(this.digitoVerificadorAgencia, credorResponse.digitoVerificadorAgencia) &&
-        Objects.equals(this.contaCorrente, credorResponse.contaCorrente) &&
-        Objects.equals(this.digitoVerificadorContaCorrente, credorResponse.digitoVerificadorContaCorrente) &&
-        Objects.equals(this.usuario, credorResponse.usuario);
+    GrupoEconomicoDTO grupoEconomicoDTO = (GrupoEconomicoDTO) o;
+    return Objects.equals(this.razaoSocial, grupoEconomicoDTO.razaoSocial) &&
+        Objects.equals(this.nomeCredor, grupoEconomicoDTO.nomeCredor) &&
+        Objects.equals(this.numeroReceitaFederal, grupoEconomicoDTO.numeroReceitaFederal) &&
+        Objects.equals(this.inscricaoEstadual, grupoEconomicoDTO.inscricaoEstadual) &&
+        Objects.equals(this.contato, grupoEconomicoDTO.contato) &&
+        Objects.equals(this.banco, grupoEconomicoDTO.banco) &&
+        Objects.equals(this.agencia, grupoEconomicoDTO.agencia) &&
+        Objects.equals(this.digitoAgencia, grupoEconomicoDTO.digitoAgencia) &&
+        Objects.equals(this.contaCorrente, grupoEconomicoDTO.contaCorrente) &&
+        Objects.equals(this.digitoContaCorrente, grupoEconomicoDTO.digitoContaCorrente) &&
+        Objects.equals(this.periodicidade, grupoEconomicoDTO.periodicidade) &&
+        Objects.equals(this.pagamentoSemanal, grupoEconomicoDTO.pagamentoSemanal) &&
+        Objects.equals(this.pagamentoMensal, grupoEconomicoDTO.pagamentoMensal) &&
+        Objects.equals(this.pagamentoDecendialPrimeiro, grupoEconomicoDTO.pagamentoDecendialPrimeiro) &&
+        Objects.equals(this.pagamentoDecendialSegundo, grupoEconomicoDTO.pagamentoDecendialSegundo) &&
+        Objects.equals(this.pagamentoDecendialTerceiro, grupoEconomicoDTO.pagamentoDecendialTerceiro) &&
+        Objects.equals(this.pagamentoQuinzenalPrimeiro, grupoEconomicoDTO.pagamentoQuinzenalPrimeiro) &&
+        Objects.equals(this.pagamentoQuinzenalSegundo, grupoEconomicoDTO.pagamentoQuinzenalSegundo) &&
+        Objects.equals(this.percentualRAV, grupoEconomicoDTO.percentualRAV) &&
+        Objects.equals(this.recebeRAV, grupoEconomicoDTO.recebeRAV) &&
+        Objects.equals(this.percentualMultiplica, grupoEconomicoDTO.percentualMultiplica) &&
+        Objects.equals(this.taxaAdm, grupoEconomicoDTO.taxaAdm) &&
+        Objects.equals(this.taxaBanco, grupoEconomicoDTO.taxaBanco) &&
+        Objects.equals(this.limiteRAV, grupoEconomicoDTO.limiteRAV);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, idPessoaJuridica, nome, periodicidade, pagamentoSemanal, pagamentoMensal, pagamentoDecendialPrimeiro, pagamentoDecendialSegundo, pagamentoDecendialTerceiro, pagamentoQuinzenalPrimeiro, pagamentoQuinzenalSegundo, credorBanco, percentualRAV, recebeRAV, percentualMultiplica, taxaAdm, taxaBanco, limiteRAV, idCredorRAV, banco, agencia, digitoVerificadorAgencia, contaCorrente, digitoVerificadorContaCorrente, usuario);
+    return Objects.hash(razaoSocial, nomeCredor, numeroReceitaFederal, inscricaoEstadual, contato, banco, agencia, digitoAgencia, contaCorrente, digitoContaCorrente, periodicidade, pagamentoSemanal, pagamentoMensal, pagamentoDecendialPrimeiro, pagamentoDecendialSegundo, pagamentoDecendialTerceiro, pagamentoQuinzenalPrimeiro, pagamentoQuinzenalSegundo, percentualRAV, recebeRAV, percentualMultiplica, taxaAdm, taxaBanco, limiteRAV);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CredorResponse {\n");
+    sb.append("class GrupoEconomicoDTO {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    idPessoaJuridica: ").append(toIndentedString(idPessoaJuridica)).append("\n");
-    sb.append("    nome: ").append(toIndentedString(nome)).append("\n");
+    sb.append("    razaoSocial: ").append(toIndentedString(razaoSocial)).append("\n");
+    sb.append("    nomeCredor: ").append(toIndentedString(nomeCredor)).append("\n");
+    sb.append("    numeroReceitaFederal: ").append(toIndentedString(numeroReceitaFederal)).append("\n");
+    sb.append("    inscricaoEstadual: ").append(toIndentedString(inscricaoEstadual)).append("\n");
+    sb.append("    contato: ").append(toIndentedString(contato)).append("\n");
+    sb.append("    banco: ").append(toIndentedString(banco)).append("\n");
+    sb.append("    agencia: ").append(toIndentedString(agencia)).append("\n");
+    sb.append("    digitoAgencia: ").append(toIndentedString(digitoAgencia)).append("\n");
+    sb.append("    contaCorrente: ").append(toIndentedString(contaCorrente)).append("\n");
+    sb.append("    digitoContaCorrente: ").append(toIndentedString(digitoContaCorrente)).append("\n");
     sb.append("    periodicidade: ").append(toIndentedString(periodicidade)).append("\n");
     sb.append("    pagamentoSemanal: ").append(toIndentedString(pagamentoSemanal)).append("\n");
     sb.append("    pagamentoMensal: ").append(toIndentedString(pagamentoMensal)).append("\n");
@@ -620,20 +605,12 @@ public class CredorResponse   {
     sb.append("    pagamentoDecendialTerceiro: ").append(toIndentedString(pagamentoDecendialTerceiro)).append("\n");
     sb.append("    pagamentoQuinzenalPrimeiro: ").append(toIndentedString(pagamentoQuinzenalPrimeiro)).append("\n");
     sb.append("    pagamentoQuinzenalSegundo: ").append(toIndentedString(pagamentoQuinzenalSegundo)).append("\n");
-    sb.append("    credorBanco: ").append(toIndentedString(credorBanco)).append("\n");
     sb.append("    percentualRAV: ").append(toIndentedString(percentualRAV)).append("\n");
     sb.append("    recebeRAV: ").append(toIndentedString(recebeRAV)).append("\n");
     sb.append("    percentualMultiplica: ").append(toIndentedString(percentualMultiplica)).append("\n");
     sb.append("    taxaAdm: ").append(toIndentedString(taxaAdm)).append("\n");
     sb.append("    taxaBanco: ").append(toIndentedString(taxaBanco)).append("\n");
     sb.append("    limiteRAV: ").append(toIndentedString(limiteRAV)).append("\n");
-    sb.append("    idCredorRAV: ").append(toIndentedString(idCredorRAV)).append("\n");
-    sb.append("    banco: ").append(toIndentedString(banco)).append("\n");
-    sb.append("    agencia: ").append(toIndentedString(agencia)).append("\n");
-    sb.append("    digitoVerificadorAgencia: ").append(toIndentedString(digitoVerificadorAgencia)).append("\n");
-    sb.append("    contaCorrente: ").append(toIndentedString(contaCorrente)).append("\n");
-    sb.append("    digitoVerificadorContaCorrente: ").append(toIndentedString(digitoVerificadorContaCorrente)).append("\n");
-    sb.append("    usuario: ").append(toIndentedString(usuario)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -649,6 +626,4 @@ public class CredorResponse   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
-
 

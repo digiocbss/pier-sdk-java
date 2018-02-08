@@ -16,16 +16,12 @@ import br.com.conductor.pier.api.v2.model.PageStatusCartaoResponse;
 import br.com.conductor.pier.api.v2.model.PageStatusContaResponse;
 import br.com.conductor.pier.api.v2.model.PageStatusImpressaoResponse;
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class StatusParametroApi {
   private ApiClient apiClient;
 
@@ -148,12 +144,12 @@ public class StatusParametroApi {
    * @param id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status da Conta (id).
    * @return StatusContaResponse
    */
-  public StatusContaResponse consultarUsingGET25(Long id) throws ApiException {
+  public StatusContaResponse consultarUsingGET27(Long id) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
      if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET25");
+        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET27");
      }
      
     // create path and map variables
@@ -196,12 +192,12 @@ public class StatusParametroApi {
    * @param id C\u00C3\u00B3digo de Identifica\u00C3\u00A7\u00C3\u00A3o do Status de Impress\u00C3\u00A3o do Cart\u00C3\u00A3o (id).
    * @return StatusImpressaoResponse
    */
-  public StatusImpressaoResponse consultarUsingGET26(Long id) throws ApiException {
+  public StatusImpressaoResponse consultarUsingGET28(Long id) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
      if (id == null) {
-        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET26");
+        throw new ApiException(400, "Missing the required parameter 'id' when calling consultarUsingGET28");
      }
      
     // create path and map variables
@@ -422,7 +418,7 @@ public class StatusParametroApi {
    * @param permiteAtribuirComoCancelamento Par\u00C3\u00A2metro que define se o Status da conta permite ser atribu\u00C3\u00ADdo para realizar o cancelamento definitivo de uma conta, sendo: 0: Inativo e 1: Ativo.
    * @return PageStatusContaResponse
    */
-  public PageStatusContaResponse listarUsingGET31(List<String> sort, Integer page, Integer limit, Long id, String nome, Integer permiteAlterarVencimento, Integer permiteAlterarLimite, Integer permiteEmitirNovaViaCartao, Integer permiteFazerTransferencia, Integer permiteReceberTransferencia, Integer permiteCriarAcordoCobranca, Integer permiteAtribuirComoBloqueio, Integer permiteDesbloquear, Integer permiteAtribuirComoCancelamento) throws ApiException {
+  public PageStatusContaResponse listarUsingGET36(List<String> sort, Integer page, Integer limit, Long id, String nome, Integer permiteAlterarVencimento, Integer permiteAlterarLimite, Integer permiteEmitirNovaViaCartao, Integer permiteFazerTransferencia, Integer permiteReceberTransferencia, Integer permiteCriarAcordoCobranca, Integer permiteAtribuirComoBloqueio, Integer permiteDesbloquear, Integer permiteAtribuirComoCancelamento) throws ApiException {
     Object postBody = null;
     
     // create path and map variables
@@ -496,7 +492,7 @@ public class StatusParametroApi {
    * @param nome Nome do status impress\u00C3\u00A3o
    * @return PageStatusImpressaoResponse
    */
-  public PageStatusImpressaoResponse listarUsingGET32(List<String> sort, Integer page, Integer limit, Long id, String nome) throws ApiException {
+  public PageStatusImpressaoResponse listarUsingGET37(List<String> sort, Integer page, Integer limit, Long id, String nome) throws ApiException {
     Object postBody = null;
     
     // create path and map variables
@@ -543,4 +539,3 @@ public class StatusParametroApi {
   }
   
 }
-

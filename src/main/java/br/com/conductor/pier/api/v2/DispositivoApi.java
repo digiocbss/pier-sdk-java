@@ -11,16 +11,12 @@ import br.com.conductor.pier.api.v2.model.DispositivoResponse;
 import br.com.conductor.pier.api.v2.model.PageDispositivoResponse;
 import br.com.conductor.pier.api.v2.model.DispositivoPersist;
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class DispositivoApi {
   private ApiClient apiClient;
 
@@ -150,7 +146,7 @@ public class DispositivoApi {
    * @param dataDesativacao Apresenta a data e em que o registro foi desativado.
    * @return PageDispositivoResponse
    */
-  public PageDispositivoResponse listarUsingGET15(List<String> sort, Integer page, Integer limit, String token, Long idUsuario, Long idAplicacaoMobile, String dataCriacao, String dataDesativacao) throws ApiException {
+  public PageDispositivoResponse listarUsingGET17(List<String> sort, Integer page, Integer limit, String token, Long idUsuario, Long idAplicacaoMobile, String dataCriacao, String dataDesativacao) throws ApiException {
     Object postBody = null;
     
     // create path and map variables
@@ -208,12 +204,12 @@ public class DispositivoApi {
    * @param persist persist
    * @return DispositivoResponse
    */
-  public DispositivoResponse salvarUsingPOST8(DispositivoPersist persist) throws ApiException {
+  public DispositivoResponse salvarUsingPOST9(DispositivoPersist persist) throws ApiException {
     Object postBody = persist;
     
      // verify the required parameter 'persist' is set
      if (persist == null) {
-        throw new ApiException(400, "Missing the required parameter 'persist' when calling salvarUsingPOST8");
+        throw new ApiException(400, "Missing the required parameter 'persist' when calling salvarUsingPOST9");
      }
      
     // create path and map variables
@@ -250,4 +246,3 @@ public class DispositivoApi {
   }
   
 }
-
