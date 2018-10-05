@@ -11,16 +11,12 @@ import br.com.conductor.pier.api.v2.model.AjusteFinanceiroResponse;
 import java.math.BigDecimal;
 import br.com.conductor.pier.api.v2.model.PageAjusteResponse;
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class GlobaltagajustefinanceiroApi {
   private ApiClient apiClient;
 
@@ -48,11 +44,12 @@ public class GlobaltagajustefinanceiroApi {
    * @param dataAjuste {{{ajuste_financeiro_persist_data_ajuste_value}}}
    * @param valorAjuste {{{ajuste_financeiro_persist_valor_ajuste_value}}}
    * @param idConta {{{ajuste_financeiro_persist_id_conta_value}}}
+   * @param login login
    * @param identificadorExterno {{{ajuste_financeiro_persist_identificador_externo_value}}}
    * @param idTransacaoOriginal {{{ajuste_persist_id_transacao_original}}}
    * @return AjusteFinanceiroResponse
    */
-  public AjusteFinanceiroResponse ajustarContaUsingPOST(Long idTipoAjuste, String dataAjuste, BigDecimal valorAjuste, Long idConta, String identificadorExterno, Long idTransacaoOriginal) throws ApiException {
+  public AjusteFinanceiroResponse ajustarContaUsingPOST(Long idTipoAjuste, String dataAjuste, BigDecimal valorAjuste, Long idConta, String login, String identificadorExterno, Long idTransacaoOriginal) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idTipoAjuste' is set
@@ -97,6 +94,8 @@ public class GlobaltagajustefinanceiroApi {
     queryParams.addAll(apiClient.parameterToPairs("", "idTransacaoOriginal", idTransacaoOriginal));
     
 
+    if (login != null)
+      headerParams.put("login", apiClient.parameterToString(login));
     
 
     
@@ -234,4 +233,3 @@ public class GlobaltagajustefinanceiroApi {
   }
   
 }
-

@@ -9,17 +9,14 @@ import br.com.conductor.pier.api.v2.invoker.Pair;
 
 import br.com.conductor.pier.api.v2.model.LimiteDisponibilidadeResponse;
 import java.math.BigDecimal;
-
-
+import br.com.conductor.pier.api.v2.model.SensibilizarSaldoGlobalUpdateValue;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class GlobaltaglimitedisponibilidadeApi {
   private ApiClient apiClient;
 
@@ -59,12 +56,12 @@ public class GlobaltaglimitedisponibilidadeApi {
    * @param limiteMaximo {{{limite_disponibilidade_persist_limite_maximo_value}}}
    * @return LimiteDisponibilidadeResponse
    */
-  public LimiteDisponibilidadeResponse alterarUsingPUT9(Long idConta, BigDecimal limiteGlobal, BigDecimal limiteCompra, BigDecimal limiteParcelado, BigDecimal limiteParcelas, BigDecimal limiteSaqueGlobal, BigDecimal limiteSaquePeriodo, BigDecimal limiteConsignado, BigDecimal limiteInternacionalCompra, BigDecimal limiteInternacionalParcelado, BigDecimal limiteInternacionalParcelas, BigDecimal limiteInternacionalSaqueGlobal, BigDecimal limiteInternacionalSaquePeriodo, BigDecimal limiteMaximo) throws ApiException {
+  public LimiteDisponibilidadeResponse alterarUsingPUT8(Long idConta, BigDecimal limiteGlobal, BigDecimal limiteCompra, BigDecimal limiteParcelado, BigDecimal limiteParcelas, BigDecimal limiteSaqueGlobal, BigDecimal limiteSaquePeriodo, BigDecimal limiteConsignado, BigDecimal limiteInternacionalCompra, BigDecimal limiteInternacionalParcelado, BigDecimal limiteInternacionalParcelas, BigDecimal limiteInternacionalSaqueGlobal, BigDecimal limiteInternacionalSaquePeriodo, BigDecimal limiteMaximo) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
      if (idConta == null) {
-        throw new ApiException(400, "Missing the required parameter 'idConta' when calling alterarUsingPUT9");
+        throw new ApiException(400, "Missing the required parameter 'idConta' when calling alterarUsingPUT8");
      }
      
     // create path and map variables
@@ -134,12 +131,12 @@ public class GlobaltaglimitedisponibilidadeApi {
    * @param idConta {{{limite_disponibilidade_resource_consultar_param_id_conta}}}
    * @return LimiteDisponibilidadeResponse
    */
-  public LimiteDisponibilidadeResponse consultarUsingGET23(Long idConta) throws ApiException {
+  public LimiteDisponibilidadeResponse consultarUsingGET21(Long idConta) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'idConta' is set
      if (idConta == null) {
-        throw new ApiException(400, "Missing the required parameter 'idConta' when calling consultarUsingGET23");
+        throw new ApiException(400, "Missing the required parameter 'idConta' when calling consultarUsingGET21");
      }
      
     // create path and map variables
@@ -177,5 +174,58 @@ public class GlobaltaglimitedisponibilidadeApi {
     
   }
   
-}
+  /**
+   * {{{limite_disponibilidade_resource_sensibilizar_credito_disponivel}}}
+   * {{{limite_disponibilidade_resource_sensibilizar_credito_disponivel_notes}}}
+   * @param id {{{sensibilizar_saldo_global_param_id}}}
+   * @param sensibilizarSaldoGlobal sensibilizarSaldoGlobal
+   * @return LimiteDisponibilidadeResponse
+   */
+  public LimiteDisponibilidadeResponse sensibilizarSaldoDisponivelGlobalUsingPOST(Long id, SensibilizarSaldoGlobalUpdateValue sensibilizarSaldoGlobal) throws ApiException {
+    Object postBody = sensibilizarSaldoGlobal;
+    
+     // verify the required parameter 'id' is set
+     if (id == null) {
+        throw new ApiException(400, "Missing the required parameter 'id' when calling sensibilizarSaldoDisponivelGlobalUsingPOST");
+     }
+     
+     // verify the required parameter 'sensibilizarSaldoGlobal' is set
+     if (sensibilizarSaldoGlobal == null) {
+        throw new ApiException(400, "Missing the required parameter 'sensibilizarSaldoGlobal' when calling sensibilizarSaldoDisponivelGlobalUsingPOST");
+     }
+     
+    // create path and map variables
+    String path = "/api/contas/{id}/limites-disponibilidades/sensibilizar-saldo-disponivel-global".replaceAll("\\{format\\}","json")
+      .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "application/json"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    //String[] authNames = new String[] {"client_id",  };
+    String[] authNames = new String[] {"client_id", "access_token"};
+
+    
+    GenericType<LimiteDisponibilidadeResponse> returnType = new GenericType<LimiteDisponibilidadeResponse>() {};
+    return apiClient.invokeAPI(path, "POST", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+}

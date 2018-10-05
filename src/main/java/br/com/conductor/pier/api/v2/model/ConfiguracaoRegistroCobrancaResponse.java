@@ -8,8 +8,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
-
-
 /**
  * {{{configuracao_registro_cobranca_response_description}}}
  **/
@@ -92,6 +90,7 @@ public class ConfiguracaoRegistroCobrancaResponse   {
   }
 
   private ClientIDEnum clientID = null;
+  private String chave = null;
 
   
   /**
@@ -400,6 +399,24 @@ public class ConfiguracaoRegistroCobrancaResponse   {
   }
 
   
+  /**
+   * {{{configuracao_registro_cobranca_persist_chave_value}}}
+   **/
+  public ConfiguracaoRegistroCobrancaResponse chave(String chave) {
+    this.chave = chave;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "{{{configuracao_registro_cobranca_persist_chave_value}}}")
+  @JsonProperty("chave")
+  public String getChave() {
+    return chave;
+  }
+  public void setChave(String chave) {
+    this.chave = chave;
+  }
+
+  
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -426,12 +443,13 @@ public class ConfiguracaoRegistroCobrancaResponse   {
         Objects.equals(this.uriAdicional, configuracaoRegistroCobrancaResponse.uriAdicional) &&
         Objects.equals(this.status, configuracaoRegistroCobrancaResponse.status) &&
         Objects.equals(this.secret, configuracaoRegistroCobrancaResponse.secret) &&
-        Objects.equals(this.clientID, configuracaoRegistroCobrancaResponse.clientID);
+        Objects.equals(this.clientID, configuracaoRegistroCobrancaResponse.clientID) &&
+        Objects.equals(this.chave, configuracaoRegistroCobrancaResponse.chave);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, idEmissor, codigoBanco, uri, keyStoreName, keyStorePassword, keystoreAlias, keyStorePrivateKeyPassword, typeKeystore, trustStoreName, trustStorePassword, truststoreAlias, typeTruststore, uriAdicional, status, secret, clientID);
+    return Objects.hash(id, idEmissor, codigoBanco, uri, keyStoreName, keyStorePassword, keystoreAlias, keyStorePrivateKeyPassword, typeKeystore, trustStoreName, trustStorePassword, truststoreAlias, typeTruststore, uriAdicional, status, secret, clientID, chave);
   }
 
   @Override
@@ -456,6 +474,7 @@ public class ConfiguracaoRegistroCobrancaResponse   {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
     sb.append("    clientID: ").append(toIndentedString(clientID)).append("\n");
+    sb.append("    chave: ").append(toIndentedString(chave)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -471,6 +490,4 @@ public class ConfiguracaoRegistroCobrancaResponse   {
     return o.toString().replace("\n", "\n    ");
   }
 }
-
-
 

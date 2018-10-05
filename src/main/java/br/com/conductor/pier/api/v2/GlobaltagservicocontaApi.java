@@ -9,17 +9,14 @@ import br.com.conductor.pier.api.v2.invoker.Pair;
 
 import br.com.conductor.pier.api.v2.model.PageAnuidadeResponse;
 import br.com.conductor.pier.api.v2.model.PageOperadoraResponse;
-
-
+import br.com.conductor.pier.api.v2.model.PageTipoServicoResponse;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen")
-
 public class GlobaltagservicocontaApi {
   private ApiClient apiClient;
 
@@ -45,7 +42,6 @@ public class GlobaltagservicocontaApi {
    * {{{conta_resource_ativar_anuidade_notes}}}
    * @param id {{{conta_resource_ativar_anuidade_param_id}}}
    * @param idAnuidade {{{anuidade_request_id_anuidade_value}}}
-   * @param authorization Authorization
    * @param sort {{{global_menssagem_sort_sort}}}
    * @param page {{{global_menssagem_sort_page_value}}}
    * @param limit {{{global_menssagem_sort_limit}}}
@@ -55,7 +51,7 @@ public class GlobaltagservicocontaApi {
    * @param idOrigemComercial {{{anuidade_request_id_origem_comercial_value}}}
    * @return Object
    */
-  public Object ativarAnuidadeUsingPOST(Long id, Long idAnuidade, String authorization, List<String> sort, Integer page, Integer limit, String DDD, String celular, Long idOperadora, Long idOrigemComercial) throws ApiException {
+  public Object ativarAnuidadeUsingPOST(Long id, Long idAnuidade, List<String> sort, Integer page, Integer limit, String DDD, String celular, Long idOperadora, Long idOrigemComercial) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
@@ -95,8 +91,6 @@ public class GlobaltagservicocontaApi {
     queryParams.addAll(apiClient.parameterToPairs("", "idOrigemComercial", idOrigemComercial));
     
 
-    if (authorization != null)
-      headerParams.put("Authorization", apiClient.parameterToString(authorization));
     
 
     
@@ -124,10 +118,9 @@ public class GlobaltagservicocontaApi {
    * {{{conta_resource_ativar_envio_fatura_email}}}
    * {{{conta_resource_ativar_envio_fatura_email_notes}}}
    * @param id {{{conta_resource_ativar_envio_fatura_email_param_id}}}
-   * @param authorization Authorization
    * @return Object
    */
-  public Object ativarEnvioFaturaEmailUsingPOST(Long id, String authorization) throws ApiException {
+  public Object ativarEnvioFaturaEmailUsingPOST(Long id) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
@@ -146,8 +139,6 @@ public class GlobaltagservicocontaApi {
 
     
 
-    if (authorization != null)
-      headerParams.put("Authorization", apiClient.parameterToString(authorization));
     
 
     
@@ -175,10 +166,9 @@ public class GlobaltagservicocontaApi {
    * {{{conta_resource_desativar_envio_fatura_email}}}
    * {{{conta_resource_desativar_envio_fatura_email_notes}}}
    * @param id {{{conta_resource_desativar_envio_fatura_email_param_id}}}
-   * @param authorization Authorization
    * @return Object
    */
-  public Object desativarEnvioFaturaEmailUsingPOST(Long id, String authorization) throws ApiException {
+  public Object desativarEnvioFaturaEmailUsingPOST(Long id) throws ApiException {
     Object postBody = null;
     
      // verify the required parameter 'id' is set
@@ -197,8 +187,6 @@ public class GlobaltagservicocontaApi {
 
     
 
-    if (authorization != null)
-      headerParams.put("Authorization", apiClient.parameterToString(authorization));
     
 
     
@@ -322,5 +310,54 @@ public class GlobaltagservicocontaApi {
     
   }
   
-}
+  /**
+   * {{{tipo_servico_resource_listar_tipo_servico}}}
+   * {{{tipo_servico_resource_listar_tipo_servico}}}
+   * @param sort {{{global_menssagem_sort_sort}}}
+   * @param page {{{global_menssagem_sort_page_value}}}
+   * @param limit {{{global_menssagem_sort_limit}}}
+   * @return PageTipoServicoResponse
+   */
+  public PageTipoServicoResponse listarTipoServicoUsingGET(List<String> sort, Integer page, Integer limit) throws ApiException {
+    Object postBody = null;
+    
+    // create path and map variables
+    String path = "/api/tipos-servicos".replaceAll("\\{format\\}","json");
 
+    // query params
+    List<Pair> queryParams = new ArrayList<Pair>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, Object> formParams = new HashMap<String, Object>();
+
+    
+    queryParams.addAll(apiClient.parameterToPairs("multi", "sort", sort));
+    
+    queryParams.addAll(apiClient.parameterToPairs("", "page", page));
+    
+    queryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+    
+
+    
+
+    
+
+    final String[] accepts = {
+      "*/*"
+    };
+    final String accept = apiClient.selectHeaderAccept(accepts);
+
+    final String[] contentTypes = {
+      "application/json"
+    };
+    final String contentType = apiClient.selectHeaderContentType(contentTypes);
+
+    //String[] authNames = new String[] {"client_id",  };
+    String[] authNames = new String[] {"client_id", "access_token"};
+
+    
+    GenericType<PageTipoServicoResponse> returnType = new GenericType<PageTipoServicoResponse>() {};
+    return apiClient.invokeAPI(path, "GET", queryParams, postBody, headerParams, formParams, accept, contentType, authNames, returnType);
+    
+  }
+  
+}
