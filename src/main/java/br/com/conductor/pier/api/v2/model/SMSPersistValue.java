@@ -28,7 +28,24 @@ public class SMSPersistValue   {
     RISCO_FRAUDE("RISCO_FRAUDE"),
     CODIGO_SEGURANCA("CODIGO_SEGURANCA"),
     OUTROS("OUTROS"),
-    OTP_3D_SECURE("OTP_3D_SECURE");
+    OTP_3D_SECURE("OTP_3D_SECURE"),
+    PAGAMENTO("PAGAMENTO"),
+    TRANSACAO_COMPRA_AUTORIZADO("TRANSACAO_COMPRA_AUTORIZADO"),
+    TRANSACAO_COMPRA_NAO_AUTORIZADO("TRANSACAO_COMPRA_NAO_AUTORIZADO"),
+    TRANSACAO_SAQUE_AUTORIZADO("TRANSACAO_SAQUE_AUTORIZADO"),
+    TRANSACAO_SAQUE_NAO_AUTORIZADO("TRANSACAO_SAQUE_NAO_AUTORIZADO"),
+    TRANSACAO_PAGAMENTO_AUTORIZADO("TRANSACAO_PAGAMENTO_AUTORIZADO"),
+    TRANSACAO_PAGAMENTO_NAO_AUTORIZADO("TRANSACAO_PAGAMENTO_NAO_AUTORIZADO"),
+    TRANSACAO_ADVICE("TRANSACAO_ADVICE"),
+    TRANSACAO_ERRO("TRANSACAO_ERRO"),
+    TRANSACAO_SIMULACAO("TRANSACAO_SIMULACAO"),
+    TRANSACAO_SENHA_CHIP("TRANSACAO_SENHA_CHIP"),
+    TRANSACAO_CONSULTA_SALDO("TRANSACAO_CONSULTA_SALDO"),
+    TRANSACAO_CONSULTA_STATUS_CONTA("TRANSACAO_CONSULTA_STATUS_CONTA"),
+    TRANSACAO_DESFAZIMENTO("TRANSACAO_DESFAZIMENTO"),
+    TRANSACAO_CANCELAMENTO("TRANSACAO_CANCELAMENTO"),
+    TRANSACAO_RESPOSTA_SONDA("TRANSACAO_RESPOSTA_SONDA"),
+    TRANSACAO_TOKEN("TRANSACAO_TOKEN");
 
     private String value;
 
@@ -54,7 +71,7 @@ public class SMSPersistValue   {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "{{{s_m_s_persist_nsu_value}}}")
+  @ApiModelProperty(example = "null", value = "{{{s_m_s_persist_nsu_value}}}")
   @JsonProperty("nsu")
   public Long getNsu() {
     return nsu;
@@ -72,7 +89,7 @@ public class SMSPersistValue   {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "{{{s_m_s_persist_id_pessoa_value}}}")
+  @ApiModelProperty(example = "null", value = "{{{s_m_s_persist_id_pessoa_value}}}")
   @JsonProperty("idPessoa")
   public Long getIdPessoa() {
     return idPessoa;
@@ -90,7 +107,7 @@ public class SMSPersistValue   {
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "{{{s_m_s_persist_id_conta_value}}}")
+  @ApiModelProperty(example = "null", value = "{{{s_m_s_persist_id_conta_value}}}")
   @JsonProperty("idConta")
   public Long getIdConta() {
     return idConta;
